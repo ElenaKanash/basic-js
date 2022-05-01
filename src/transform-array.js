@@ -18,26 +18,30 @@ function transform( arr ) {
   if (!Array.isArray(arr)) {
   throw new Error("'arr' parameter must be an instance of the Array!");
 }
+
 if(arr.length === 0 ) return [];
 
-let index = arr.indexOf('--discard-prev');
-let prevIndex = index - 1;
-
-  if(index >  0 ) {
-    console.log(index) ;
-    console.log(prevIndex);
-  let result = arr.slice(0, index ) + ',' + arr.slice(index +1);
-  console.log(result);
-  result =  result.split(',').map(el => +el)
+let newArr = [];
+for (let i =0; i <arr.length; i++){
+  if (arr[i] === '--discard-next') {
+    i= i + 2;
+  } else if(arr[i] ==='--discard-prev') {
+    newArr.pop();
+  }else if(arr[i] ==='--double-next') {
+    newArr.push(arr[i+1]);
+  } else if(arr[i] ==='--double-prev') {
+    newArr.push(arr[i+1]);
+  } else  {
+  newArr.push(arr[i]);
   }
 
-
-/*  for (let i = 0; i < arr.length; i++) {
-    if (arr[i] === '--discard-next') {
-
-}*/
-
+  } return newArr;
 }
+let result = [];
+
+
+
+
 
 module.exports = {
   transform
