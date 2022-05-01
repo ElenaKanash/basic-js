@@ -25,6 +25,7 @@ let newArr = [];
 
 for (let i =0; i <arr.length; i++){
   if (arr[i] === '--discard-next') {
+    if(i < arr.length-1 )
     i= i + 2;
 
   } else if(arr[i] ==='--discard-prev') {
