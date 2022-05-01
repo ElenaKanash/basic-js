@@ -13,16 +13,23 @@ const { NotImplementedError } = require('../extensions/index.js');
  * createDreamTeam(['Olivia', 1111, 'Lily', 'Oscar', true, null]) => 'LOO'
  *
  */
-function createDreamTeam( members ) {
- // throw new NotImplementedError('Not implemented');
-  // remove line with error and write your code here
-  if ( !Array.isArray(members) || members.every(n=> typeof n !== "string") || members.some(n=> n ===null ))
-  {return false}
-  //if (members.every(n=> typeof n === "string" ) || members.some(n=> n !==null )) {
- // else { return members.map( n=> n.trim()[0].slice(0,1)).sort().join('').toUpperCase();}
-  else { return members.map(n=> n.trimStart()).sort().map( n=> n.slice(0,1)).join('').toUpperCase();}
+ function createDreamTeam( members ) {
+  // throw new NotImplementedError('Not implemented');
+   // remove line with error and write your code here
+ //  if ( !Array.isArray(members) || members.every(n=> typeof n !== "string") || members.some(n=> n ===null )) {return false}
+   //if (members.every(n=> typeof n === "string" ) || members.some(n=> n !==null )) {
+
+// else { return members.map(n=> n.trimStart().slice(0,1).sort().join('').toUpperCase();}
+if (!Array.isArray(members)) {
+  return false;
+}
+  else {
+  return members.filter((n) => typeof n === "string").map((n) => n.trimStart().slice(0,1).toUpperCase())
+  .sort().join("");
+}
 }
 
-module.exports = {
-  createDreamTeam
-};
+
+ module.exports = {
+   createDreamTeam
+ };
