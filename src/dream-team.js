@@ -17,7 +17,6 @@ const { NotImplementedError } = require('../extensions/index.js');
   // throw new NotImplementedError('Not implemented');
    // remove line with error and write your code here
  //  if ( !Array.isArray(members) || members.every(n=> typeof n !== "string") || members.some(n=> n ===null )) {return false}
-   //if (members.every(n=> typeof n === "string" ) || members.some(n=> n !==null )) {
 
 // else { return members.map(n=> n.trimStart().slice(0,1).sort().join('').toUpperCase();}
 if (!Array.isArray(members)) {
