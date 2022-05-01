@@ -15,10 +15,10 @@ function getCommonCharacterCount(s1, s2 ) {
   //throw new NotImplementedError('Not implemented');
   // remove line with error and write your code here
   let result = 0;
-  for(let i=0; i<s1.length; i++) {
-    if (s2.includes(s1[i])){
+  for(let i=0; i<s2.length; i++) {
+    if (s1.includes(s2[i])){
       result++;
-      s2 =s2.replace(s1[i], '');
+      s1 =s1.replace(s2[i], '');
     }
 
   } return result;
