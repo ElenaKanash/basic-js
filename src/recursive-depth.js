@@ -28,7 +28,7 @@ class DepthCalculator {
   }
 }*/
   return Array.isArray(arr) ? 1 + Math.max(...arr.map(calculateDepth)) : 0;
-}
+  }
 }
 
 
